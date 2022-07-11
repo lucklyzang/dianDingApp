@@ -65,7 +65,7 @@
             </div>
             <div class="my-object">
                 <img :src="defaultPersonPng">
-                <div class="line-one">登 录 有 光</div>
+                <div class="line-one">登 录 点 丁</div>
                 <div class="line-two">发 现 有 趣</div>
                 <div class="login-btn" @click="loginEvent">
                     立即登录

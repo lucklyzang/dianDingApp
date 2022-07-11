@@ -53,12 +53,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../digitalH5/index.html'),
+    index: path.resolve(__dirname, '../dianDingApp/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../digitalH5'),
+    assetsRoot: path.resolve(__dirname, '../dianDingApp'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/digitalH5/',
+    assetsPublicPath: '/dianDingApp/',
 
     /**
      * Source Maps
