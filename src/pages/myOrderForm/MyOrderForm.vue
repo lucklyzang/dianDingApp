@@ -366,7 +366,9 @@
 			position: relative;
 			/deep/ .van-tabs {
 				.van-sticky--fixed {
-					z-index: 2000
+					z-index: 2000;
+					width: 95%;
+					left: 2.5%
 				};
 				.van-tab {
 					font-size: 15px;
