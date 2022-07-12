@@ -204,7 +204,6 @@
 		.content-center {
 			width: 95%;
 			margin: 0 auto;
-			margin-top: 16px;
 			padding-bottom:40px;
 			box-sizing: border-box;
 			position: relative;
