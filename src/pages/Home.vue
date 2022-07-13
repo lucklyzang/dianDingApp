@@ -475,8 +475,6 @@
             //页面滚动事件
             handleScroll () {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-                // 判断页面滚动的距离是否大于吸顶元素距离顶部的位置
-                this.isFixed = scrollTop >= this.navBarHeight + this.rareObjectHeight;
                 if (scrollTop > 0) {
                     this.isDisabledRefresh = true;
                 } else {
