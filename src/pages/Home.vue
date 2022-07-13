@@ -10,13 +10,14 @@
         @refresh="onRefresh"
     >
         <div class="content" ref="content">
-            <div class="rare-object" ref="rareObject">
+            <div class="rare-object" ref="rareObject" v-show="!isShowRareObjectCopy">
                 <van-swipe :autoplay="3000" indicator-color="#fff" :stop-propagation="false">
                     <van-swipe-item v-for="(item, index) in bannerList" :key="index" @click="swipeItemEvent(item)">
                         <img :src="item.path" />
                     </van-swipe-item>
                 </van-swipe>
             </div>
+            <div class="rare-object-copy" v-show="isShowRareObjectCopy"></div>
             <van-sticky>
                 <div class="tab-switch-box">
                     <div class="tab-switch" ref="tabSwitch">
@@ -262,13 +263,15 @@
         },
         data() {
             return {
+                isShowRareObjectCopy: true,
                 scrollTop: 0, // 储存滚动位置
                 tabSwitchOffsetTop: 0,
                 isTimeoutContinue: true,
                 tabSwitchHeight: 0,
                 bannerList: [],
                 navBarHeight: 0,
-                rareObjectHeight: 0, 
+                rareObjectHeight: 0,
+                isFixed: false, 
                 isDisabledRefresh: false,
                 isShowLoadFail: false,
                 isRefresh: false,
@@ -434,8 +437,10 @@
 
             // 查询banner列表
             queryBannerList () {
+                this.isShowRareObjectCopy =true;
                 getBanner().then((res) => {
                     this.bannerList = [];
+                    this.isShowRareObjectCopy = false;
                     this.$nextTick(() => {
                         this.rareObjectHeight = this.$refs.rareObject.offsetHeight
                     });
@@ -453,6 +458,7 @@
                 })
                 .catch((err) => {
                     this.bannerList = [];
+                    this.isShowRareObjectCopy = false;
                     this.$toast({
                         message: `${err.message}`,
                         position: 'bottom'
@@ -469,6 +475,8 @@
             //页面滚动事件
             handleScroll () {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                // 判断页面滚动的距离是否大于吸顶元素距离顶部的位置
+                this.isFixed = scrollTop >= this.navBarHeight + this.rareObjectHeight;
                 if (scrollTop > 0) {
                     this.isDisabledRefresh = true;
                 } else {
@@ -757,6 +765,13 @@
                         }
                     }
                 }
+            };
+            .rare-object-copy {
+                width: 92%;
+                height: 91px;
+                margin: 0 auto;
+                border-radius: 10px;
+                background: #3b3b3b;
             };
             /deep/ .van-sticky--fixed {
                 z-index: 2000
