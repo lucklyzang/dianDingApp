@@ -96,8 +96,8 @@
   .slide-left-enter,
   .slide-right-enter,
   .slide-left-leave-active {
-    width: 100%
-  }
+    width: 100%;
+  };
   .slide-left-enter, .slide-right-leave-active {
     opacity: 0;
     transition: all 0.5s ease;
