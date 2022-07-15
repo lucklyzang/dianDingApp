@@ -1031,6 +1031,7 @@
                 border-radius: 14px;
                 .img-box {
                     width: 100%;
+                    min-height: 10vh;
                     margin: 0 auto;
                     img {
                         pointer-events: none;
