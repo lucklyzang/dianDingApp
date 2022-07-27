@@ -84,7 +84,7 @@
                 isSlideArea: false,
                 backgroundImgLeft: '',
                 loadingShow: false,
-                defaultPerson: require("@/common/images/home/default-person.jpg"),
+                defaultPerson: require("@/common/images/home/default-person.png"),
                 hallBothPng: require("@/common/images/home/hall-both.png"),
                 blockchainPng: require("@/common/images/hall/hall-chain.png"),
                 imgBorderImg: require("@/common/images/home/img-border.png")

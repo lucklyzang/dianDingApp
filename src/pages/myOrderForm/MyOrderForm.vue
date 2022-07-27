@@ -181,7 +181,7 @@
 				descriptionContent: '暂无订单',
                 orderList: [],
 				animationData: [],
-                defaultPersonPng :require("@/common/images/home/default-person.jpg"),
+                defaultPersonPng :require("@/common/images/home/default-person.png"),
 			}
 		},
 		onReady() {},

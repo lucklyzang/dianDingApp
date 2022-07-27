@@ -353,7 +353,7 @@
                     }
                 ],
                 imgLoadingGif: require("../../../static/img/img-loading.gif"),
-                digitalCollectioUrl: require("@/common/images/home/default-person.jpg"),
+                digitalCollectioUrl: require("@/common/images/home/default-person.png"),
                 sharePng: require("@/common/images/login/my-details-share.png"),
                 boothPng: require("@/common/images/home/booth.png"),
                 lightPng: require("@/common/images/home/light.png"),

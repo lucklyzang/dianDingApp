@@ -209,7 +209,7 @@
                     iconRight: require("@/common/images/login/arrow-right.png"),
                     span: '分享'
                 }],
-                defaultPerson: require("@/common/images/home/default-person.jpg"),
+                defaultPerson: require("@/common/images/home/default-person.png"),
                 setPng: require("@/common/images/login/set.png"),
                 notLoginPng: require("@/common/images/login/not-login.png"),
                 blockchainPng: require("@/common/images/home/blockchain.png"),
