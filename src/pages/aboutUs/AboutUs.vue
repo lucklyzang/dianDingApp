@@ -28,7 +28,7 @@
 		},
 		data() {
 			return {
-			  logoScriptPng: require("@/common/images/home/logo-script.png")
+			  logoScriptPng: require("@/common/images/home/default-person.jpg")
 			}
 		},
 		onReady() {},
