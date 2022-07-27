@@ -48,7 +48,7 @@
         realNameValue: '',
         phoneNumber: '',
         cardValue: '',
-        defaultPersonPng :require("@/common/images/home/default-person.png"),
+        defaultPersonPng :require("@/common/images/home/default-person.jpg"),
         realNameAuthenticationPng :require("@/common/images/login/real-name-authentication.png")
       }
     },

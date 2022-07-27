@@ -86,23 +86,23 @@
         digitalCollectionList: [{
             countdownTime: '03:06:00',
             digitalCollectionName: '新疆喀纳斯之秋',
-            digitalCollectioUrl: require("@/common/images/home/default-person.png"),
+            digitalCollectioUrl: require("@/common/images/home/default-person.jpg"),
             digitalCollectioShare: 8000,
             digitalCollectioAuthor: '乔玲',
-            digitalCollectioAuthorPhoto: require("@/common/images/home/default-person.png"),
+            digitalCollectioAuthorPhoto: require("@/common/images/home/default-person.jpg"),
             digitalCollectioPrice: '59.90',
             tagAttributes: ['风景画','限量']
         }, {
             countdownTime: '03:06:00',
             digitalCollectionName: '玄武门',
-            digitalCollectioUrl: require("@/common/images/home/default-person.png"),
+            digitalCollectioUrl: require("@/common/images/home/default-person.jpg"),
             digitalCollectioShare: 8000,
             digitalCollectioAuthor: '乔玲',
-            digitalCollectioAuthorPhoto: require("@/common/images/home/default-person.png"),
+            digitalCollectioAuthorPhoto: require("@/common/images/home/default-person.jpg"),
             digitalCollectioPrice: '59.90',
             tagAttributes: ['春节特惠']
         }],
-        defaultPersonPng :require("@/common/images/home/default-person.png")
+        defaultPersonPng :require("@/common/images/home/default-person.jpg")
       }
     },
 

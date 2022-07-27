@@ -41,7 +41,7 @@
     },
     data() {
       return {
-        defaultPersonPng: require("@/common/images/home/default-person.png"),
+        defaultPersonPng: require("@/common/images/home/default-person.jpg"),
         arrowRightPng: require("@/common/images/login/arrow-right.png")
       }
     },
