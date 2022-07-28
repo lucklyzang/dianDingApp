@@ -593,11 +593,11 @@
                 align-items: center;
                 flex: 1;
                 background: @color-home-block;
-                img {
-                    width: 80px;
+                >img {
+                    width: 130px;
                 };
                 .line-one {
-                    margin-top: 30px;
+                    margin-top: 20px;
                     margin-bottom: 8px;
                     font-size: 22px;
                     color: #fff
