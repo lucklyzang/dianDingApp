@@ -85,7 +85,7 @@
 			justify-content: center;
 			align-items: center;
 			img {
-				width: 120px
+				width: 160px
 			}
 		};
 		.content-center {

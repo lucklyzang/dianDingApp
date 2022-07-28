@@ -37,7 +37,7 @@ export default {
             justify-content: center;
             align-items: center;
             >img {
-                width: 50%
+                width: 60%
             }
         };
         .blockchain-server {
