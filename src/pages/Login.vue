@@ -79,7 +79,7 @@ export default {
 	  invitationCodeValue: '',
 	  path: '',
 	  isSending: false,
-	  registerBuyInfoBoxShow: true,
+	  registerBuyInfoBoxShow: false,
 	  isDisabled: false,
 	  timer: null,
 	  checked: false,
