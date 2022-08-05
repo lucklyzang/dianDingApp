@@ -5,13 +5,13 @@
                 <img src="../../static/img/default-person.png" alt="">
             </div>
             <div class="blockchain-server">
-                <p style="margin-bottom:8px">
+                <!-- <p style="margin-bottom:8px">
                     <span style="font-size:12px">中国传统文化数字艺术联盟监制</span>
                 </p>
                 <p>
                     <img src="../../static/img/blockchain-service.png" style="width:100px" alt="">
                     <span style="font-size:12px;margin-left:8px">提供技术支持</span>
-                </p>
+                </p> -->
             </div>
         </div>
 </template>

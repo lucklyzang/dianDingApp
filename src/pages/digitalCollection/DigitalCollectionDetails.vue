@@ -188,13 +188,13 @@
                 </div>
             </div>
             <div class="blockchain-server">
-                <p>
+                <!-- <p>
                     <span>中国传统文化数字艺术联盟监制</span>
                 </p>
                 <p>
                     <img :src="blockchainServePng" alt="">
                     <span>提供技术支持</span>
-                </p>
+                </p> -->
             </div>
         </div>
         <div class="content-bottom">
