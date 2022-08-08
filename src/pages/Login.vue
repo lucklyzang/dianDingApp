@@ -67,7 +67,7 @@
 import {sendPhoneAuthCode} from '@/api/login.js'
 import { mapGetters, mapMutations } from 'vuex'
 import NavBar from '@/components/NavBar'
-import {IsPC} from '@/common/js/utils'
+import {IsPC, getUrlParam} from '@/common/js/utils'
 export default {
   name: 'Login',
   components: {
@@ -136,6 +136,18 @@ export default {
 	},
 
   mounted () {
+	// 扫码跳转到登录页时获取邀请码
+	if (window.location.href.indexOf("code") != -1) {
+		this.invitationCodeValue = getUrlParam('code');
+	};
+	// 扫码跳转到登录页时获取邀请者类型
+	if (window.location.href.indexOf("inviteType") != -1) {
+		let inviteType = getUrlParam('inviteType');
+		let temporaryInviteMessage = {};
+		temporaryInviteMessage['inviteType'] = inviteType;
+		temporaryInviteMessage['inviteId'] = '';
+		this.changeInviteMessage(temporaryInviteMessage)
+	};
 	this.toTop();
     // 控制设备物理返回按键
     if (!IsPC()) {
@@ -155,6 +167,7 @@ export default {
   methods: {
     ...mapMutations([
 		'storeUserInfo',
+		'changeInviteMessage',
 		'changeIsCanSendPhoneCode',
 		'changeCountdownTime',
 		'changeIsEnterVerificationCodePage'
