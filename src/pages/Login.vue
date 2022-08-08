@@ -107,6 +107,7 @@ export default {
     ...mapGetters([
 		'isCanSendPhoneCode',
 		'countdownTime',
+		'isInvitedCodeToLoginPage',
 		'isTokenExpired',
 		'isEnterVerificationCodePage',
 		'isEnterLoginPageSource'
@@ -124,14 +125,19 @@ export default {
     },
 
 	beforeRouteLeave(to, from, next) {
-		if (to.path !== '/verificationCode' && to.path !== '/protocol' && to.path !== '/privacy') {
-			this.changeIsEnterVerificationCodePage(false);
-		};
-		if (this.isEnterVerificationCodePage) {
-			this.path = this.isEnterLoginPageSource
+		if (!this.isInvitedCodeToLoginPage) {
+			if (to.path !== '/verificationCode' && to.path !== '/protocol' && to.path !== '/privacy') {
+				this.changeIsEnterVerificationCodePage(false)
+			};
+			if (this.isEnterVerificationCodePage) {
+				this.path = this.isEnterLoginPageSource
+			} else {
+				this.path = from.path
+			};
 		} else {
-			this.path = from.path
-		};
+			this.path = '/home';
+			this.changeIsInvitedCodeToLoginPage(false)
+		};	
 		next()
 	},
 
@@ -139,6 +145,7 @@ export default {
 	// 扫码跳转到登录页时获取邀请码
 	if (window.location.href.indexOf("code") != -1) {
 		this.invitationCodeValue = getUrlParam('code');
+		this.changeIsInvitedCodeToLoginPage(true)
 	};
 	// 扫码跳转到登录页时获取邀请者类型
 	if (window.location.href.indexOf("inviteType") != -1) {
@@ -168,6 +175,7 @@ export default {
     ...mapMutations([
 		'storeUserInfo',
 		'changeInviteMessage',
+		'changeIsInvitedCodeToLoginPage',
 		'changeIsCanSendPhoneCode',
 		'changeCountdownTime',
 		'changeIsEnterVerificationCodePage'

@@ -19,6 +19,11 @@ export default {
             return state.isLogin
         },
 
+        isInvitedCodeToLoginPage: (state) => {
+            state.isInvitedCodeToLoginPage = getStore('isInvitedCodeToLoginPage') ? getStore('isInvitedCodeToLoginPage') === 'false' ? false : true : false;
+            return state.isInvitedCodeToLoginPage
+        },
+
         isGetCode: (state) => {
             state.isGetCode = getStore('isGetCode') ? getStore('isGetCode') === 'false' ? false : true : false;
             return state.isGetCode
@@ -77,9 +82,15 @@ export default {
             }
         },
 
-        //重置login的store
+        // 重置login的store
         resetState(state) {
             Object.assign(state, getDefaultLoginState())
+        },
+
+        // 保存是否通过邀请二维码进入到登录页
+        changeIsInvitedCodeToLoginPage(state, playLoad) {
+            setStore('isInvitedCodeToLoginPage', playLoad);
+            state.isInvitedCodeToLoginPage = playLoad
         },
 
         // 保存登录提示框的状态isShowNameAuthHint

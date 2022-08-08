@@ -1,6 +1,7 @@
 // 登录信息store的初始值
 export function getDefaultLoginState() {
     return {
+        isInvitedCodeToLoginPage: false, //是否通过邀请二维码进入登录页
         userInfo: null, //用户信息
         appId: '', //appId
         isGetCode: false, //是否获取过code
