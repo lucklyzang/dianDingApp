@@ -112,8 +112,8 @@
 					mobile: this.phoneNumber,
   					password: val,
 					code: this.invitationCodeValue,
-					inviteType: this.inviteMessage ? this.inviteMessage['inviteType'] : '',
-  					inviteId: this.inviteMessage ? this.inviteMessage['inviteId'] : ''
+					inviteType: !this.invitationCodeValue ? '' : this.inviteMessage ? this.inviteMessage['inviteType'] : '',
+  					// inviteId: this.inviteMessage ? this.inviteMessage['inviteId'] : ''
 				}).then((res) => {
 					this.loadingShow = false;
 					this.isShowOverlay =  false;
