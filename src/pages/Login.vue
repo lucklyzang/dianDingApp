@@ -125,19 +125,19 @@ export default {
     },
 
 	beforeRouteLeave(to, from, next) {
+		if (to.path !== '/verificationCode' && to.path !== '/protocol' && to.path !== '/privacy') {
+			this.changeIsEnterVerificationCodePage(false);
+			this.changeIsInvitedCodeToLoginPage(false)
+		};
 		if (!this.isInvitedCodeToLoginPage) {
-			if (to.path !== '/verificationCode' && to.path !== '/protocol' && to.path !== '/privacy') {
-				this.changeIsEnterVerificationCodePage(false)
-			};
 			if (this.isEnterVerificationCodePage) {
 				this.path = this.isEnterLoginPageSource
 			} else {
 				this.path = from.path
-			};
+			}
 		} else {
-			this.path = '/home';
-			this.changeIsInvitedCodeToLoginPage(false)
-		};	
+			this.path = '/home'
+		}
 		next()
 	},
 
