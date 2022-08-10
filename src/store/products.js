@@ -9,6 +9,11 @@ export default {
             return state.productsId
         },
 
+        payment: (state) => {
+            state.payment = getStore('payment') ? getStore('payment') : '1';
+            return state.payment
+        },
+
         swipeItemDetails: (state) => {
             state.swipeItemDetails = getStore('swipeItemDetails') ? JSON.parse(getStore('swipeItemDetails')) : null;
             return state.swipeItemDetails
@@ -135,6 +140,12 @@ export default {
                 setStore('orderId', playLoad);
                 state.orderId = playLoad
             }
+        },
+
+        // 保存支付方式
+        changePayment (state, playLoad) {
+            setStore('payment', playLoad);
+            state.payment = playLoad
         },
 
         // 保存是否刷新首页的状态

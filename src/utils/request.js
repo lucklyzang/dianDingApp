@@ -8,7 +8,7 @@ Vue.use(Dialog);
 // http://diandingshucang.com/nft 测试地址
 // http://39.100.74.225/nft
 const service = axios.create({
-    baseURL: 'http://39.100.74.225/nft', //接口基础地址
+    baseURL: 'http://diandingshucang.com/nft', //接口基础地址
     retry: 2, // 网络请求异常后，重试次数
     retryDelay: 1000, // 每次重试间隔时间
     shouldRetry: (err) => true // 重试条件

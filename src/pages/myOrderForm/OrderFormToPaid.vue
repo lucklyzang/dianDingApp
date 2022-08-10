@@ -44,7 +44,7 @@
                 <div class="pay-methods-choose-list">
                     <van-radio-group v-model="radio" checked-color="#edc695">
                         <van-cell-group>
-                            <van-cell clickable @click="radio = '1'">
+                            <van-cell clickable @click="paymentClickEvent('1')">
                                 <template #default>
                                     <img :src="weixinPayPng" alt="">
                                     <span>微信支付</span>
@@ -62,7 +62,7 @@
                                     <van-radio name="2" />
                                 </template>
                             </van-cell> -->
-                            <van-cell clickable @click="radio = '3'">
+                            <van-cell clickable @click="paymentClickEvent('3')">
                                  <template #default>
                                     <img :src="otherPayPng" alt="">
                                     <span>快捷支付</span>
@@ -139,6 +139,7 @@
                 'appId',
                 'isGetCode',
                 'openId',
+                'payment',
                 'isIosPaySuccess',
                 'productsId',
                 'inviteMessage'
@@ -161,6 +162,8 @@
 
 		mounted() {
             this.toTop();
+            // 获取支付方式
+            this.radio = this.payment;
             // 控制设备物理返回按键
             if (!IsPC()) {
                 pushHistory();
@@ -207,6 +210,7 @@
 			...mapMutations([
                 'changeIsPaying',
                 'changeOrderId',
+                'changePayment',
                 'changeIsRefreshHomePage',
                 'changeOpenId',
                 'changeInviteMessage',
@@ -247,6 +251,13 @@
                 }
             },
 
+            // 支付方式点击事件
+            paymentClickEvent (val) {
+                this.radio = val;
+                // 保存支付方式
+                this.changePayment(val)
+            },
+
             // 查询订单详情
             inquareOrderDetails(id) {
                 this.loadingShow = true;
@@ -285,6 +296,7 @@
                             message: '订单取消成功',
                             position: 'bottom'
                         });
+                        this.changePayment('1');
                         this.changeOrderId(this.orderId);
                         this.$router.push({name: 'orderFormDetails'})
                     } else {
@@ -329,6 +341,7 @@
                             this.paymentSuccess = true;
                             this.changeIsPaying(false);
                             this.changeOrderId(orderId);
+                            this.changePayment('1');
                             this.$router.push({name: 'orderFormDetails'})    
                         } else if (res.data.data.status == -1) {
                             this.$toast({
@@ -338,6 +351,7 @@
                             this.paymentSuccess = false;
                             this.changeIsPaying(false);
                             this.changeOrderId(orderId);
+                            this.changePayment('1');
                             this.$router.push({name: 'orderFormDetails'})
                         } else if (res.data.data.status == 0) {
                              this.$toast({
