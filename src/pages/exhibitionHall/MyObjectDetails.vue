@@ -9,7 +9,7 @@
         >
             <template #title>
                 <img :src="userInfo.avatarUrl ? userInfo.avatarUrl : defaultPerson" alt="">
-                <span>{{myHallDetails.name}}</span>
+                <span>{{userInfo.nickName}}</span>
             </template>
         </van-nav-bar>
         <van-loading type="spinner" vertical v-show="loadingShow" color="#fff">
